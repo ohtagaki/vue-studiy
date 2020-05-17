@@ -1,18 +1,16 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <transition mode="out-in">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'App'
 }
 </script>
 
@@ -25,4 +23,12 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.v-enter-active, .v-leave-active {
+  transition: opacity 1.0s;
+}
+.v-enter, .v-leave-to {
+  opacity: 0;
+}
 </style>
+
